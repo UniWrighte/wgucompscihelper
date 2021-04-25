@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+  <category>
+    <pattern>*</pattern>
+    <template>I have no answer for that. Type hello to get started</template>
+  </category>
+
+<category>
+    <pattern>hello</pattern>
+    <template>Hello! I'm here to help you with your Computer Science career goals!
+    Let's get started! Try introducing yourself or typing "ask me a question."</template>
+</category>
+<category>
+    <pattern>Ask me a question</pattern>
+    <template>
+        Do you like
+        <random>
+            <li> software</li>
+            <!--<li> routers</li>-->
+            <!--<li> people</li>-->
+            <!--<li> AI</li>-->
+            <!--<li> hacking</li>-->
+        </random>
+        ?
+    </template>
+</category>
+
+<category>
+    <that>Do you like software</that>
+    <pattern>yes</pattern>
+    <template><srai>I like software</srai></template>
+</category>
+
+<category>
+    <that>Do you like routers</that>
+    <pattern>yes</pattern>
+    <template><srai>I like routers</srai></template>
+</category>
+
+<category>
+    <that>Do you like people</that>
+    <pattern>yes</pattern>
+    <template><srai>I like people</srai></template>
+</category>
+
+<category>
+    <that>Do you like AI</that>
+    <pattern>yes</pattern>
+    <template><srai>I like AI</srai></template>
+</category>
+
+<category>
+    <that>Do you like hacking</that>
+    <pattern>yes</pattern>
+    <template><srai>I like hacking</srai></template>
+</category>
+
+<category>
+    <pattern>I like *</pattern>
+    <template>
+        <think>
+            <set name="likes">
+                <get name="likes" />,<star />
+            </set>
+        </think>
+        <srai>Ask me a question about <star /></srai>
+    </template>
+</category>
+
+<category>
+    <pattern>Ask me a question about *</pattern>
+    <template>
+        <think>
+            <set name="topic"><star /></set>
+        </think>
+        <srai>start</srai>
+    </template>
+</category>
+
+<category>
+    <pattern>What is your name</pattern>
+    <template>WGU Compsci bot</template>
+</category>
+<category>
+    <pattern>My name is *</pattern>
+    <template> Hi <set name="name"> <star /> </set> </template>
+</category>
+<category>
+    <pattern>I am *</pattern>
+    <template> Hi <set name="name"> <star /> </set> </template>
+</category>
+<category>
+    <pattern>I am called *</pattern>
+    <template> Hi <set name="name"> <star /> </set> </template>
+</category>
+<category>
+    <pattern>They call me *</pattern>
+    <template> Hi <set name="name"> <star /> </set> </template>
+</category>
+
+<category>
+    <pattern>interesting</pattern>
+    <template>interesting</template>
+</category>
+<category>
+    <pattern>can you tell me *</pattern>
+    <template><srai>what is <star /></srai></template>
+</category>
+<category>
+    <pattern>_ actual *</pattern>
+    <template><srai><star index="1" /> <star index="2" /></srai></template>
+</category>
+<category>
+    <pattern>* lol</pattern>
+    <template><sr /> :)</template>
+</category>
+
+<topic name="software">
+    <category>
+        <pattern>*</pattern>
+        <template>wow, you like software, cool! <srai>prompt</srai></template>
+    </category>
+    <category>
+        <pattern>prompt</pattern>
+        <template>it worked</template>
+    </category>
+</topic>
+
+</aiml>
+
